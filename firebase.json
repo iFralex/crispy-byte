@@ -1,0 +1,51 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": [
+    {
+      "target": "app",
+      "public": "app/build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "app/**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "dashboard",
+      "public": "dashboard/build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "dashboard/**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "database": {
+      "port": 9000
+    },
+    "hosting": {
+      "port": 5001
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}

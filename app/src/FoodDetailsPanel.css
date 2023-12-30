@@ -1,0 +1,186 @@
+.food-card {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25% 25% 8px 8px;
+    margin: 10px;
+    text-align: center;
+    overflow: visible;
+  }
+  
+  .food-card img {
+    max-width: 100%;
+    margin: 0px;
+    border-radius: 8px 8px 0px 0px;
+  }
+
+  .food-card div {
+    padding: 10px 0px;
+    font-size: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+.food-details-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-height: 75vh;
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fff;
+  }
+
+  .food-details-content {
+    padding: 20px;
+    padding-top: 0px;
+  }
+
+  .food-details-title {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+    padding: 10px 0;
+  }
+
+  .img-list {
+    display: flex;
+    overflow-x: scroll;
+    margin: 20px 0px;
+    margin-top: 0px;
+  }
+
+  .img-list img {
+    width: 80%;
+    max-width: 400px;
+    max-height: 100%;
+    margin: 0px 10px;
+    border-radius: 8px;
+  }
+
+  .img-list img:first-child {
+    margin-left: 0px;
+  }
+
+  .img-list img:last-child {
+    margin-right: 0px;
+  }
+
+  .details-list {
+    width: 100%;
+    text-align: left;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .details-list div {
+    padding-left: 20px;
+  }
+
+  .details-list div div {
+    display: inline-block;
+    border: #ccc 2px solid;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 3px 8px;
+  }
+
+  .price {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: #ed3434;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .quantity div {
+    padding-top: 5px;
+    font-size: 30px;
+  }
+
+  .quantity div button {
+    background-color: #ed3434;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 0px 15px;
+  }
+
+  .quantity div span {
+    margin: 0px 10px;
+  }
+
+  .order-bt {
+    border: none;
+    background-color: #ed3434;
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .delete-bt {
+    background-color: black;
+  }
+
+  .order-n > * {
+    border: none;
+    position: absolute;
+    top: -10px;
+    right: -8px;
+    transform: translate(50%, -50%);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .order-n > .icon {
+    color: blue;
+    font-size: 30px;
+    top: -23px;
+    right: -23px;
+    transform: scaleY(120%);
+  }
+
+  h1 {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  @media (max-width: 328px){
+    .col-xs-12 {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 250px){
+    .col-xxs-12 {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }

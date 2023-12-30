@@ -1,0 +1,43 @@
+.short-summary-panel {
+    background-color: white;
+    border-radius: 8px 8px 0px 0px;
+    width: 100%;
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -5px 5px -5px #0003
+}
+
+.short-total {
+    color: #ed3434;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.short-summary-bt {
+    background-color: #ed3434;
+    color: white;
+    font-size: 35px;
+    border-radius: 8px;
+    padding: 5px 20px;
+    border: none;
+}
+
+.loading-order-div {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fa-circle-check {
+    color: #ed3434;
+    font-size: 50px;
+}

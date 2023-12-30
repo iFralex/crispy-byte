@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "crispybyte"
+  },
+  "targets": {
+    "crispybyte": {
+      "hosting": {
+        "app": [
+          "crispybyte"
+        ],
+        "dashboard": [
+          "dashboard-crispybyte"
+        ]
+      }
+    }
+  }
+}
