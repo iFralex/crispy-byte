@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./App.css"
 import './FoodDetailsPanel.css';
-import { orderList, PriceFromNum } from "./App"
+import { orderList, PriceFromNum, LoadingIcon } from "./App"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faClose, faComment, faTrash } from '@fortawesome/free-solid-svg-icons';
-import placeHolderImg from "./placeHolderImg.jpg"
 import { animated, useSpring } from '@react-spring/web'
 import { GetFirstImage, GetImages } from "./firebase"
 
@@ -18,7 +17,7 @@ export const FoodCard = ({ food, onOpenDetails, index }) => {
   return (
     <div className="col-xl-2 col-lg-3 col-md-4 col-6 col-xxs-12">
       <div className="food-card" role='button' onClick={() => onOpenDetails(food)} tabIndex={index} aria-label={food.title + (orderList[food.id] == null ? ": clicca per aprire il pannello dei dettagli e per ordinare." : ", " + orderList[food.id] + (orderList[food.id] > 1 ? " ordinati" : " ordinato") + ": clicca per aprire il pannello dei dettagli e per modificare l'ordine.")}>
-        <img src={imageUrl ? imageUrl : placeHolderImg} alt={"Immagine anteprima di " + food.title} />
+        {imageUrl ? <img src={imageUrl} alt={"Immagine anteprima di " + food.title}/> : <div className='img-placeholder'><LoadingIcon size={40}/></div>}
         <div>{food.title}</div>
         {orderList[food.id] != null ? <div className='order-n'><FontAwesomeIcon icon={faComment} className='icon' />
           <span>{orderList[food.id]}</span></div> : null}
@@ -105,8 +104,8 @@ const FoodDetailsPanel = ({ food, onClose }) => {
           <ImageGallery name={food.title} />
           {food.description && <div className='text-center'><p>{food.description}</p></div>}
           <div className='divider' />
-          {detalisList(food.details.ingredients, "Ingredienti")}
-          {detalisList(food.details.allergens, "Allergeni")}
+          {Object.keys(food.details).map((k, i) => (
+          detalisList(food.details[k], k)))}
           <div className='row'>
             <div className='price col-6 col-xs-12'>
               <div aria-label={"Prezzo: " + PriceFromNum(food.price)}>{PriceFromNum(food.price)}</div></div>

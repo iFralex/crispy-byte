@@ -10,6 +10,7 @@ const CategoryList = ({ categories, onCategoryClick, setUpdate }) => {
   const paddingListDivRef = useRef(null);
   const [summaryHeight, setSummaryHeight] = useState(0);
   const [price, setPrice] = useState(PriceFromNum(totalOrderCost()));
+  const [showSummary, setShowSummary] = useState(false);
 
   useEffect(() => {
     if (paddingListDivRef.current)
@@ -21,12 +22,20 @@ const CategoryList = ({ categories, onCategoryClick, setUpdate }) => {
     handlePrice()
   }
 
+  const handleOpenSummary = food => {
+    setShowSummary(true)
+  };
+
+  const handleCloseSummary = () => {
+    setShowSummary(false);
+  };
+
   const handlePrice = () => setPrice(PriceFromNum(totalOrderCost()))
-  const showSummary = Object.keys(orderList).length > 0
+  const showShortSummary = Object.keys(orderList).length > 0
 
   return (<div className='w-100'>
-    <SectionHeader title={"Cosa vuoi ordinare?"} />
-    <div className="category-list">
+    <SectionHeader title={"Cosa vuoi ordinare?"} ariaHidden={showSummary} />
+    <div className="category-list" aria-hidden={showSummary}>
       {categories.map((category, i) => (
         <div key={i}>
           <div className="category-card">
@@ -43,9 +52,9 @@ const CategoryList = ({ categories, onCategoryClick, setUpdate }) => {
           </div>
         </div>
       ))}
-      {showSummary && <div ref={paddingListDivRef} />}
-      {showSummary && <ShortSummary price={price} setPaddingDivHeight={setSummaryHeight} />}
+      {showShortSummary && <div ref={paddingListDivRef} />}
     </div>
+    {showShortSummary && <ShortSummary price={price} handleOpenSummary={handleOpenSummary} handleCloseSummary={handleCloseSummary} showSummary={showSummary} setPaddingDivHeight={setSummaryHeight} />}
   </div>
   );
 };

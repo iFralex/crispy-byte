@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import './App.css'; // Stile della pagina
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,8 +13,8 @@ const foodsList = [
     description: 'Pane tostato con pomodoro fresco, aglio e basilico.',
     price: 4.5,
     details: {
-      ingredients: ['Pane', 'Pomodoro', 'Aglio', 'Basilico'],
-      allergens: ['Glutine'],
+      Ingredienti: ['Pane', 'Pomodoro', 'Aglio', 'Basilico'],
+      Allergeni: ['Glutine'],
     },
   },
   {
@@ -22,8 +22,8 @@ const foodsList = [
     description: 'Mozzarella di bufala, pomodoro e basilico freschi.',
     price: 6.0,
     details: {
-      ingredients: ['Mozzarella di bufala', 'Pomodoro', 'Basilico'],
-      allergens: ['Lattosio'],
+      Ingredienti: ['Mozzarella di bufala', 'Pomodoro', 'Basilico'],
+      Allergeni: ['Lattosio'],
     },
   },
   {
@@ -31,8 +31,8 @@ const foodsList = [
     description: 'Prosciutto crudo con fette di melone fresco.',
     price: 7.0,
     details: {
-      ingredients: ['Prosciutto crudo', 'Melone'],
-      allergens: [],
+      Ingredienti: ['Prosciutto crudo', 'Melone'],
+      Allergeni: [],
     },
   },
   {
@@ -40,8 +40,8 @@ const foodsList = [
     description: 'Fette sottili di manzo marinato con olio e limone.',
     price: 8.5,
     details: {
-      ingredients: ['Manzo', 'Olio', 'Limone'],
-      allergens: [],
+      Ingredienti: ['Manzo', 'Olio', 'Limone'],
+      Allergeni: [],
     },
   },
   //Pizza
@@ -50,8 +50,8 @@ const foodsList = [
     description: 'La regina delle pizze! Gustosa salsa di pomodoro, mozzarella di bufala fresca e fragrante basilico, tutto abbracciato dalla crosta perfettamente cotta.',
     price: 6.5,
     details: {
-      ingredients: ['Pomodoro', 'Mozzarella fior di latte', 'Basilico'],
-      allergens: ['Uova', 'Latte'],
+      Ingredienti: ['Pomodoro', 'Mozzarella fior di latte', 'Basilico'],
+      Allergeni: ['Uova', 'Latte'],
     },
   },
   {
@@ -59,8 +59,8 @@ const foodsList = [
     description: 'Senti il calore dell\'amore in ogni morso! Una festa di sapori con salsa di pomodoro, mozzarella fusa e peperoncini piccanti che aggiungono un tocco piccante indimenticabile.',
     price: 8.0,
     details: {
-      ingredients: ['Pomodoro', 'Mozzarella', 'Peperoni'],
-      allergens: ['Latte'],
+      Ingredienti: ['Pomodoro', 'Mozzarella', 'Peperoni'],
+      Allergeni: ['Latte'],
     },
   },
   {
@@ -68,8 +68,8 @@ const foodsList = [
     description: 'Un bosco di delizie sulla tua pizza! La combinazione perfetta di pomodoro fresco, mozzarella cremosa e funghi appena raccolti che ti faranno immergere nei profumi della natura.',
     price: 7.5,
     details: {
-      ingredients: ['Pomodoro', 'Mozzarella', 'Funghi'],
-      allergens: ['Latte'],
+      Ingredienti: ['Pomodoro', 'Mozzarella', 'Funghi'],
+      Allergeni: ['Latte'],
     },
   },
   {
@@ -77,7 +77,7 @@ const foodsList = [
     description: 'Un viaggio culinario attraverso le stagioni! Divertiti con un trionfo di sapori con prosciutto cotto, funghi, carciofi e olive nere, ognuno rappresentante una stagione unica.',
     price: 9.0,
     details: {
-      ingredients: [
+      Ingredienti: [
         'Pomodoro',
         'Mozzarella',
         'Prosciutto cotto',
@@ -85,7 +85,7 @@ const foodsList = [
         'Carciofi',
         'Olive nere',
       ],
-      allergens: ['Latte'],
+      Allergeni: ['Latte'],
     },
   },
   {
@@ -93,8 +93,8 @@ const foodsList = [
     description: 'Un connubio di sapori che ti sorprenderà! Mozzarella di bufala, patate a fette sottili e salsiccia italiana saporita, il tutto sulla nostra crosta tradizionale.',
     price: 10.5,
     details: {
-      ingredients: ['Mozzarella di bufala', 'Patate', 'Salsiccia', "Rosmarino"],
-      allergens: ['Latte'],
+      Ingredienti: ['Mozzarella di bufala', 'Patate', 'Salsiccia', "Rosmarino"],
+      Allergeni: ['Latte'],
     },
   },
   //Contorni
@@ -103,8 +103,8 @@ const foodsList = [
     description: 'Patatine croccanti e dorate.',
     price: 3.5,
     details: {
-      ingredients: ['Patate', 'Olio', 'Sale'],
-      allergens: [],
+      Ingredienti: ['Patate', 'Olio', 'Sale'],
+      Allergeni: [],
     },
   },
   {
@@ -112,8 +112,8 @@ const foodsList = [
     description: 'Un mix fresco di lattuga, pomodori, carote e cetrioli.',
     price: 4.0,
     details: {
-      ingredients: ['Lattuga', 'Pomodoro', 'Carote', 'Cetrioli'],
-      allergens: [],
+      Ingredienti: ['Lattuga', 'Pomodoro', 'Carote', 'Cetrioli'],
+      Allergeni: [],
     },
   },
   {
@@ -121,8 +121,8 @@ const foodsList = [
     description: 'Lattuga, crostini, parmigiano e salsa Caesar.',
     price: 5.5,
     details: {
-      ingredients: ['Lattuga', 'Crostini', 'Parmigiano', 'Salsa Caesar'],
-      allergens: ['Glutine', 'Lattosio'],
+      Ingredienti: ['Lattuga', 'Crostini', 'Parmigiano', 'Salsa Caesar'],
+      Allergeni: ['Glutine', 'Lattosio'],
     },
   },
   {
@@ -130,8 +130,8 @@ const foodsList = [
     description: 'Mix di verdure grigliate con olio e erbe aromatiche.',
     price: 6.0,
     details: {
-      ingredients: ['Zucchine', 'Peperoni', 'Melanzane', 'Olio', 'Erbe aromatiche'],
-      allergens: [],
+      Ingredienti: ['Zucchine', 'Peperoni', 'Melanzane', 'Olio', 'Erbe aromatiche'],
+      Allergeni: [],
     },
   },
   {
@@ -139,8 +139,8 @@ const foodsList = [
     description: 'Patate al forno con rosmarino e aglio.',
     price: 4.0,
     details: {
-      ingredients: ['Patate', 'Rosmarino', 'Aglio'],
-      allergens: [],
+      Ingredienti: ['Patate', 'Rosmarino', 'Aglio'],
+      Allergeni: [],
     },
   },
   //Dolci
@@ -149,8 +149,8 @@ const foodsList = [
     description: 'Il classico dolce italiano con savoiardi e crema al caffè.',
     price: 5.5,
     details: {
-      ingredients: ['Savoiardi', 'Caffè', 'Mascarpone', 'Cacao'],
-      allergens: ['Uova', 'Glutine', 'Lattosio'],
+      Ingredienti: ['Savoiardi', 'Caffè', 'Mascarpone', 'Cacao'],
+      Allergeni: ['Uova', 'Glutine', 'Lattosio'],
     },
   },
   {
@@ -158,8 +158,8 @@ const foodsList = [
     description: 'Dolce al cucchiaio con salsa di frutti di bosco.',
     price: 4.8,
     details: {
-      ingredients: ['Panna', 'Zucchero', 'Gelatina', 'Frutti di bosco'],
-      allergens: ['Lattosio'],
+      Ingredienti: ['Panna', 'Zucchero', 'Gelatina', 'Frutti di bosco'],
+      Allergeni: ['Lattosio'],
     },
   },
   {
@@ -167,8 +167,8 @@ const foodsList = [
     description: 'Torta soffice al cioccolato con glassa al cioccolato fondente.',
     price: 6.5,
     details: {
-      ingredients: ['Farina', 'Cacao', 'Zucchero', 'Cioccolato fondente'],
-      allergens: ['Glutine', 'Lattosio'],
+      Ingredienti: ['Farina', 'Cacao', 'Zucchero', 'Cioccolato fondente'],
+      Allergeni: ['Glutine', 'Lattosio'],
     },
   },
   //Bevande
@@ -177,8 +177,8 @@ const foodsList = [
     description: 'Acqua minerale naturale.',
     price: 2.0,
     details: {
-      ingredients: ['Acqua'],
-      allergens: [],
+      Ingredienti: ['Acqua'],
+      Allergeni: [],
     },
   },
   {
@@ -186,8 +186,8 @@ const foodsList = [
     description: 'Bevanda gassata al cola.',
     price: 2.5,
     details: {
-      ingredients: ['Acqua', 'Zucchero', 'Anidride carbonica', 'Caffeina'],
-      allergens: [],
+      Ingredienti: ['Acqua', 'Zucchero', 'Anidride carbonica', 'Caffeina'],
+      Allergeni: [],
     },
   },
   {
@@ -195,8 +195,8 @@ const foodsList = [
     description: 'Bevanda rinfrescante al limone.',
     price: 3.0,
     details: {
-      ingredients: ['Acqua', 'Limone', 'Zucchero'],
-      allergens: [],
+      Ingredienti: ['Acqua', 'Limone', 'Zucchero'],
+      Allergeni: [],
     },
   },
   {
@@ -204,8 +204,8 @@ const foodsList = [
     description: "Bevanda gassata all'arancia.",
     price: 2.8,
     details: {
-      ingredients: ['Acqua', 'Arancia', 'Zucchero', 'Anidride carbonica'],
-      allergens: [],
+      Ingredienti: ['Acqua', 'Arancia', 'Zucchero', 'Anidride carbonica'],
+      Allergeni: [],
     },
   },
 ];
@@ -259,18 +259,18 @@ const App = () => {
   return <p style={{color: "red", padding: 20}}>Errore: argomento mancante.<br/>Prova a scannerizzare di nuovo il QR code.<br/><br/>Codice Errore: 001</p>
 };
 
-const SectionHeader = ({ title, onBackClick }) => {
+const SectionHeader = ({ title, onBackClick, ariaHidden }) => {
   return (
-    <div className="section-header">
-      <div className='back-i' role='button' aria-label="Indietro">
-        {onBackClick !== undefined ? (<FontAwesomeIcon icon={faArrowLeft} onClick={onBackClick} className='display-4' />) : null}
-      </div>
+    <div className="section-header" aria-hidden={ariaHidden}>
+      {onBackClick !== undefined && (<div className='back-i' role='button' aria-label="Indietro">
+        <FontAwesomeIcon icon={faArrowLeft} onClick={onBackClick} className='display-4' />
+      </div>)}
       <h2>{title}</h2>
     </div>
   );
 };
 
-export const LoadingIcon = () => {
+export const LoadingIcon = ({size}) => {
   const props = useSpring({
     to: { transform: 'rotate(360deg)' },
     from: { transform: 'rotate(0deg)' },
@@ -284,8 +284,8 @@ export const LoadingIcon = () => {
         border: '10px solid #eee',
         borderTop: '10px solid #ed3434',
         borderRadius: '50%',
-        width: '80px',
-        height: '80px',
+        width: size + "px",
+        height: size + "px",
         ...props,
       }}
     />
