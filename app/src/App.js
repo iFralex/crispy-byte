@@ -40,7 +40,7 @@ const App = () => {
 
   const items = selectedCategory ? foodsList.slice(categoriesList[selectedCategory][0], categoriesList[selectedCategory][1] + categoriesList[selectedCategory][0]) : [];
 
-  if (tavolo !== -1 && data.tables.includes(tavolo))
+  if (tavolo !== -1 && Object.keys(data.tables).includes(tavolo))
     return (
       <div className="app">
         <header className="app-header" aria-label='CrispyByte'>
