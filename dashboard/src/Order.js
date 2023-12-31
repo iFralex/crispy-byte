@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { foodsList } from "./App"
+import { foodsList, tables, ColorTable } from "./App"
 import { format } from "date-fns"
-import { UpdateCompletedsOnDb } from "./firebase"
+import { UpdateCompletedsOnDb, DeleteOrder } from "./firebase"
 
 const Order = ({ order, info }) => {
     const [selection, setSelection] = useState(info.completed || [])
     const [loading, setLoading] = useState(false)
-    const PriceFromNum = n => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
+    const [deleting, setDeleting] = useState(false)
     const completing = info.completed.length === Object.keys(order).length
     let equal = JSON.stringify(selection) === JSON.stringify(info.completed)
 
@@ -33,8 +33,9 @@ const Order = ({ order, info }) => {
         )
         return p
     }
-    
-    return (<div className="order">
+
+    return (<div className="order" style={{backgroundColor: ColorTable(tables[info.table])
+    }}>
         <div className="details">
             <p>Tavolo: <span>{info.table}</span></p>
             <p>Prezzo: <span>{PriceFromNum(TotalPrice(order))}</span></p>
@@ -51,7 +52,14 @@ const Order = ({ order, info }) => {
         </ul>
         {!loading && !equal && info.completed !== true && <button onClick={UpdateCompleteds}>Aggiorna</button>}
         {!loading && equal && completing && <button className="done-bt" onClick={SetDone}>{"Fatto "} </button>}
+        {!deleting && info.completed === true && <button className="delete-bt" onClick={() => setDeleting(true)}>Elimina</button>}
+        {deleting && <div>
+            <p style={{paddingTop: 10}}>Sicuro di vole eliminare quest'ordine?</p>
+            <button className="delete-bt" onClick={() => DeleteOrder(info.table, info.time)}>Conferma</button>
+            <button className="cancel-bt" onClick={() => setDeleting(false)}>Annulla</button></div>}
     </div>)
 }
+
+export const PriceFromNum = n => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
 
 export default Order

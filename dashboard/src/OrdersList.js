@@ -1,29 +1,23 @@
 import { useState, useEffect, useReducer } from 'react'
-import "./App"
+import {foodsList} from "./App"
 import Order from "./Order"
-import { GetAllOrders } from "./firebase"
 
-const OrdersList = () => {
+const OrdersList = ({GetOrdersFunc, FormatOrders, callbackFunc = (_, __) => {}}) => {
     const [orders, setOrderList] = useState({})
     const [info, setInfo] = useState({})
-    const [ordersNumber, setOrdersNumber] = useState(0)
-
+    console.log(GetOrdersFunc)
     const handleGetOrderList = ol => {
         let formOrders = {}, _info = {}
         if (ol)
-            Object.keys(ol).map((table) => Object.keys(ol[table]).map(id => {
-                if (ol[table][id].completed !== true) {
-                    _info[id] = { table: table, time: parseInt(id), completed: ol[table][id].completed || [] }
-                    if (ol[table][id].completed)
-                        delete ol[table][id].completed
-                    formOrders[id] = ol[table][id]
-                }
-            }))
+            [formOrders, _info] = FormatOrders(ol)
         setOrderList(formOrders)
         setInfo(_info)
+        let tP = 0
+        Object.keys(formOrders).map(id => Object.keys(formOrders[id]).map(foodId => tP += foodsList[foodId].price * formOrders[id][foodId]))
+        callbackFunc(tP, Object.keys(formOrders))
     }
 
-    useEffect(() => { GetAllOrders(handleGetOrderList) }, [])
+    useEffect(() => { GetOrdersFunc(handleGetOrderList) }, [])
 
     return (<div className='row'>
         {Object.keys(orders).map((id, i) => (

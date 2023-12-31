@@ -5,8 +5,15 @@
       "description": "Pane tostato con pomodoro fresco, aglio e basilico.",
       "price": 4.5,
       "details": {
-        "Ingredienti": ["Pane", "Pomodoro", "Aglio", "Basilico"],
-        "Allergeni": ["Glutine"]
+        "Ingredienti": [
+          "Pane",
+          "Pomodoro",
+          "Aglio",
+          "Basilico"
+        ],
+        "Allergeni": [
+          "Glutine"
+        ]
       }
     },
     {
@@ -14,8 +21,14 @@
       "description": "Mozzarella di bufala, pomodoro e basilico freschi.",
       "price": 6.0,
       "details": {
-        "Ingredienti": ["Mozzarella di bufala", "Pomodoro", "Basilico"],
-        "Allergeni": ["Lattosio"]
+        "Ingredienti": [
+          "Mozzarella di bufala",
+          "Pomodoro",
+          "Basilico"
+        ],
+        "Allergeni": [
+          "Lattosio"
+        ]
       }
     },
     {
@@ -23,7 +36,10 @@
       "description": "Prosciutto crudo con fette di melone fresco.",
       "price": 7.0,
       "details": {
-        "Ingredienti": ["Prosciutto crudo", "Melone"],
+        "Ingredienti": [
+          "Prosciutto crudo",
+          "Melone"
+        ],
         "Allergeni": []
       }
     },
@@ -32,7 +48,11 @@
       "description": "Fette sottili di manzo marinato con olio e limone.",
       "price": 8.5,
       "details": {
-        "Ingredienti": ["Manzo", "Olio", "Limone"],
+        "Ingredienti": [
+          "Manzo",
+          "Olio",
+          "Limone"
+        ],
         "Allergeni": []
       }
     },
@@ -41,8 +61,15 @@
       "description": "La regina delle pizze! Gustosa salsa di pomodoro, mozzarella di bufala fresca e fragrante basilico, tutto abbracciato dalla crosta perfettamente cotta.",
       "price": 6.5,
       "details": {
-        "Ingredienti": ["Pomodoro", "Mozzarella fior di latte", "Basilico"],
-        "Allergeni": ["Uova", "Latte"]
+        "Ingredienti": [
+          "Pomodoro",
+          "Mozzarella fior di latte",
+          "Basilico"
+        ],
+        "Allergeni": [
+          "Uova",
+          "Latte"
+        ]
       }
     },
     {
@@ -50,8 +77,14 @@
       "description": "Senti il calore dell'amore in ogni morso! Una festa di sapori con salsa di pomodoro, mozzarella fusa e peperoncini piccanti che aggiungono un tocco piccante indimenticabile.",
       "price": 8.0,
       "details": {
-        "Ingredienti": ["Pomodoro", "Mozzarella", "Peperoni"],
-        "Allergeni": ["Latte"]
+        "Ingredienti": [
+          "Pomodoro",
+          "Mozzarella",
+          "Peperoni"
+        ],
+        "Allergeni": [
+          "Latte"
+        ]
       }
     },
     {
@@ -59,8 +92,14 @@
       "description": "Un bosco di delizie sulla tua pizza! La combinazione perfetta di pomodoro fresco, mozzarella cremosa e funghi appena raccolti che ti faranno immergere nei profumi della natura.",
       "price": 7.5,
       "details": {
-        "Ingredienti": ["Pomodoro", "Mozzarella", "Funghi"],
-        "Allergeni": ["Latte"]
+        "Ingredienti": [
+          "Pomodoro",
+          "Mozzarella",
+          "Funghi"
+        ],
+        "Allergeni": [
+          "Latte"
+        ]
       }
     },
     {
@@ -76,7 +115,9 @@
           "Carciofi",
           "Olive nere"
         ],
-        "Allergeni": ["Latte"]
+        "Allergeni": [
+          "Latte"
+        ]
       }
     },
     {
@@ -84,8 +125,15 @@
       "description": "Un connubio di sapori che ti sorprenderà! Mozzarella di bufala, patate a fette sottili e salsiccia italiana saporita, il tutto sulla nostra crosta tradizionale.",
       "price": 10.5,
       "details": {
-        "Ingredienti": ["Mozzarella di bufala", "Patate", "Salsiccia", "Rosmarino"],
-        "Allergeni": ["Latte"]
+        "Ingredienti": [
+          "Mozzarella di bufala",
+          "Patate",
+          "Salsiccia",
+          "Rosmarino"
+        ],
+        "Allergeni": [
+          "Latte"
+        ]
       }
     },
     {
@@ -93,7 +141,11 @@
       "description": "Patatine croccanti e dorate.",
       "price": 3.5,
       "details": {
-        "Ingredienti": ["Patate", "Olio", "Sale"],
+        "Ingredienti": [
+          "Patate",
+          "Olio",
+          "Sale"
+        ],
         "Allergeni": []
       }
     },
@@ -102,7 +154,12 @@
       "description": "Un mix fresco di lattuga, pomodori, carote e cetrioli.",
       "price": 4.0,
       "details": {
-        "Ingredienti": ["Lattuga", "Pomodoro", "Carote", "Cetrioli"],
+        "Ingredienti": [
+          "Lattuga",
+          "Pomodoro",
+          "Carote",
+          "Cetrioli"
+        ],
         "Allergeni": []
       }
     },
@@ -111,8 +168,16 @@
       "description": "Lattuga, crostini, parmigiano e salsa Caesar.",
       "price": 5.5,
       "details": {
-        "Ingredienti": ["Lattuga", "Crostini", "Parmigiano", "Salsa Caesar"],
-        "Allergeni": ["Glutine", "Lattosio"]
+        "Ingredienti": [
+          "Lattuga",
+          "Crostini",
+          "Parmigiano",
+          "Salsa Caesar"
+        ],
+        "Allergeni": [
+          "Glutine",
+          "Lattosio"
+        ]
       }
     },
     {
@@ -120,7 +185,13 @@
       "description": "Mix di verdure grigliate con olio e erbe aromatiche.",
       "price": 6.0,
       "details": {
-        "Ingredienti": ["Zucchine", "Peperoni", "Melanzane", "Olio", "Erbe aromatiche"],
+        "Ingredienti": [
+          "Zucchine",
+          "Peperoni",
+          "Melanzane",
+          "Olio",
+          "Erbe aromatiche"
+        ],
         "Allergeni": []
       }
     },
@@ -129,7 +200,11 @@
       "description": "Patate al forno con rosmarino e aglio.",
       "price": 4.0,
       "details": {
-        "Ingredienti": ["Patate", "Rosmarino", "Aglio"],
+        "Ingredienti": [
+          "Patate",
+          "Rosmarino",
+          "Aglio"
+        ],
         "Allergeni": []
       }
     },
@@ -138,8 +213,17 @@
       "description": "Il classico dolce italiano con savoiardi e crema al caffè.",
       "price": 5.5,
       "details": {
-        "Ingredienti": ["Savoiardi", "Caffè", "Mascarpone", "Cacao"],
-        "Allergeni": ["Uova", "Glutine", "Lattosio"]
+        "Ingredienti": [
+          "Savoiardi",
+          "Caffè",
+          "Mascarpone",
+          "Cacao"
+        ],
+        "Allergeni": [
+          "Uova",
+          "Glutine",
+          "Lattosio"
+        ]
       }
     },
     {
@@ -147,8 +231,15 @@
       "description": "Dolce al cucchiaio con salsa di frutti di bosco.",
       "price": 4.8,
       "details": {
-        "Ingredienti": ["Panna", "Zucchero", "Gelatina", "Frutti di bosco"],
-        "Allergeni": ["Lattosio"]
+        "Ingredienti": [
+          "Panna",
+          "Zucchero",
+          "Gelatina",
+          "Frutti di bosco"
+        ],
+        "Allergeni": [
+          "Lattosio"
+        ]
       }
     },
     {
@@ -156,8 +247,16 @@
       "description": "Torta soffice al cioccolato con glassa al cioccolato fondente.",
       "price": 6.5,
       "details": {
-        "Ingredienti": ["Farina", "Cacao", "Zucchero", "Cioccolato fondente"],
-        "Allergeni": ["Glutine", "Lattosio"]
+        "Ingredienti": [
+          "Farina",
+          "Cacao",
+          "Zucchero",
+          "Cioccolato fondente"
+        ],
+        "Allergeni": [
+          "Glutine",
+          "Lattosio"
+        ]
       }
     },
     {
@@ -165,7 +264,9 @@
       "description": "Acqua minerale naturale.",
       "price": 2.0,
       "details": {
-        "Ingredienti": ["Acqua"],
+        "Ingredienti": [
+          "Acqua"
+        ],
         "Allergeni": []
       }
     },
@@ -174,7 +275,12 @@
       "description": "Bevanda gassata al cola.",
       "price": 2.5,
       "details": {
-        "Ingredienti": ["Acqua", "Zucchero", "Anidride carbonica", "Caffeina"],
+        "Ingredienti": [
+          "Acqua",
+          "Zucchero",
+          "Anidride carbonica",
+          "Caffeina"
+        ],
         "Allergeni": []
       }
     },
@@ -183,7 +289,11 @@
       "description": "Bevanda rinfrescante al limone.",
       "price": 3.0,
       "details": {
-        "Ingredienti": ["Acqua", "Limone", "Zucchero"],
+        "Ingredienti": [
+          "Acqua",
+          "Limone",
+          "Zucchero"
+        ],
         "Allergeni": []
       }
     },
@@ -192,7 +302,12 @@
       "description": "Bevanda gassata all'arancia.",
       "price": 2.8,
       "details": {
-        "Ingredienti": ["Acqua", "Arancia", "Zucchero", "Anidride carbonica"],
+        "Ingredienti": [
+          "Acqua",
+          "Arancia",
+          "Zucchero",
+          "Anidride carbonica"
+        ],
         "Allergeni": []
       }
     }
@@ -203,5 +318,19 @@
     "Contorno": 5,
     "Dolce": 3,
     "Bevanda": 4
+  },
+  "tables": {
+    "1": [255, 0, 0],
+    "2": [0, 255, 0],
+    "3": [0, 0, 255],
+    "4": [255, 255, 0],
+    "5": [255, 0, 255],
+    "6": [0, 255, 255],
+    "7": [128, 0, 128],
+    "8": [0, 128, 0],
+    "9": [0, 0, 128],
+    "10": [128, 128, 128],
+    "11": [244, 122, 15]
   }
+  
 }

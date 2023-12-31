@@ -97,12 +97,85 @@
   color: #070;
 }
 
+.order .delete-bt {
+  background-color: #e30000;
+}
+
 .order .details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.order .details p {
+.tables-list div {
+  text-align: left;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 8px;
+  border: white 1px solid;
+}
 
+.head-table {
+  position: relative;
+  color: white;
+  margin-top: 20px;
+}
+
+.head-table h1 {
+  text-align: center;
+  font-size: 35px;
+}
+
+.head-table button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0000;
+  color: white;
+  border: none;
+  font-size: 30px;
+}
+
+.delete-bt, .cancel-bt {
+  border: none;
+  background-color: #e30000;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+button.cancel-bt,
+.confirm-deleting .cancel-bt {
+  background: white;
+  color: black;
+  margin-top: 10px;
+}
+
+.confirm-deleting p {
+  color: white;
+}
+
+.total-price {
+  color: wheat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.total-price span {
+  font-size: 40px;
+  font-weight: bold;
+  display: block;
+}
+
+.no-order {
+  color: white;
+  text-align: center;
+  padding: 50px;
 }

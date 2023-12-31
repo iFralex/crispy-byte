@@ -19,11 +19,19 @@ const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
 export const GetAllOrders = (getOrders) => {
-    onValue(ref(db, "Ordini"), snp => {console.log(snp.val());getOrders(snp.val());})
+  onValue(ref(db, "Ordini"), snp => { console.log(snp.val()); getOrders(snp.val()); })
+}
+
+export const GetTableOrderFromDb = (table, getOrders) => {
+  onValue(ref(db, "Ordini/" + table), snp => getOrders(snp.val()))
 }
 
 export const UpdateCompletedsOnDb = (value, table, id, onComplete) => {
   set(ref(db, "Ordini/" + table + "/" + id + "/completed"), value).then(() => onComplete()).catch(err => alert(err))
+}
+
+export const DeleteOrder = (table, id) => {
+  set(ref(db, "Ordini/" + table + "/" + id), null)
 }
 
 export default app
