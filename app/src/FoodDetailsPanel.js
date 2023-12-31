@@ -45,10 +45,10 @@ const FoodDetailsPanel = ({ food, onClose }) => {
     window.addEventListener('scroll', updateButtonPosition);
     return () => {
       if (divRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         resizeObserver.unobserve(divRef.current);
       }
       window.removeEventListener('scroll', updateButtonPosition);
-
     };
   }, []);
 

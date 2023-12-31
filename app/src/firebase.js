@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getStorage, ref as refSg, listAll, getDownloadURL } from "firebase/storage";
-import { getDatabase, push, ref as refDb } from "firebase/database";
+import { getDatabase, set, ref as refDb } from "firebase/database";
 import { imgLinks } from "./App"
 
 const firebaseConfig = {
@@ -62,7 +62,7 @@ export const GetFirstImage = (name, setImageUrl) => {
 }
 
 export const takeOrder = (orderList, tavolo, onCallback, onError) => {
-  push(refDb(db, "Ordini/" + tavolo), orderList).then(() => onCallback()).catch(err => onError(err))
+  set(refDb(db, "Ordini/" + tavolo + "/" + (new Date()).getTime()), orderList).then(() => onCallback()).catch(err => onError(err))
 }
 
 export default app
