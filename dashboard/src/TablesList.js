@@ -17,7 +17,7 @@ const TablesList = () => {
         setSelTable("")
         setDeleting(false)
     }
-    
+
     const handleInfo = (n, ids) => {
         setTotalPrice(n)
         console.log("ids: ", ids)
@@ -50,6 +50,7 @@ const TablesList = () => {
                     <p style={{ paddingTop: 10, color: "white", marginBottom: -20 }}>Sicuro di vole eliminare quest'ordine?</p>
                     <button className="delete-bt" onClick={() => orderIds.map(id => DeleteOrder(selTable, id))}>Conferma</button>
                     <button className="cancel-bt" onClick={() => setDeleting(false)}>Annulla</button></div>)}
+                <div style={{height: 15}} />
             </div>}
     </div>
 }

@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase, ref, onValue, set } from "firebase/database";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBKHupmYI10mLDfRTE4yWUCJXwpALWo7vQ",
@@ -17,9 +18,10 @@ const app = initializeApp(firebaseConfig);
 
 const analytics = getAnalytics(app);
 const db = getDatabase(app);
+const auth = getAuth(app);
 
 export const GetAllOrders = (getOrders) => {
-  onValue(ref(db, "Ordini"), snp => { console.log(snp.val()); getOrders(snp.val()); })
+  onValue(ref(db, "Ordini"), snp => getOrders(snp.val()))
 }
 
 export const GetTableOrderFromDb = (table, getOrders) => {
@@ -32,6 +34,17 @@ export const UpdateCompletedsOnDb = (value, table, id, onComplete) => {
 
 export const DeleteOrder = (table, id) => {
   set(ref(db, "Ordini/" + table + "/" + id), null)
+}
+
+export const SignIn = (email, password, onSigned) => {
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      onSigned(true);
+    })
+    .catch((error) => {
+      onSigned(false)
+      alert(error)
+    });
 }
 
 export default app

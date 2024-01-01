@@ -2,6 +2,8 @@ import { useState } from "react";
 import { foodsList, tables, ColorTable } from "./App"
 import { format } from "date-fns"
 import { UpdateCompletedsOnDb, DeleteOrder } from "./firebase"
+import { faRotateRight, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Order = ({ order, info }) => {
     const [selection, setSelection] = useState(info.completed || [])
@@ -15,6 +17,8 @@ const Order = ({ order, info }) => {
         setSelection(newSel)
         equal = JSON.stringify(newSel.sort((a, b) => a - b)) === JSON.stringify(info.completed)
     }
+
+    const handleResetSelection = () => setSelection(info.completed)
 
     const SetDone = () => {
         UpdateCompletedsOnDb(true, info.table, info.time, () => setLoading(false))
@@ -50,8 +54,8 @@ const Order = ({ order, info }) => {
                         <label key={i}><input type="checkbox" checked={selection.includes(parseInt(foodId))} onChange={() => handleUpdateSelection(parseInt(foodId))}></input>{foodsList[foodId].title + ": x" + order[foodId]}</label>)
                 })}
         </ul>
-        {!loading && !equal && info.completed !== true && <button onClick={UpdateCompleteds}>Aggiorna</button>}
-        {!loading && equal && completing && <button className="done-bt" onClick={SetDone}>{"Fatto "} </button>}
+        {!loading && !equal && info.completed !== true && <div className="d-flex"><button className="update-bt" onClick={UpdateCompleteds}>Aggiorna</button><button className="reset-bt" onClick={handleResetSelection}><FontAwesomeIcon icon={faRotateRight}/></button></div>}
+        {!loading && equal && completing && <button className="done-bt" onClick={SetDone}>{"Fatto "} <FontAwesomeIcon icon={faCheckCircle}/></button>}
         {!deleting && info.completed === true && <button className="delete-bt" onClick={() => setDeleting(true)}>Elimina</button>}
         {deleting && <div>
             <p style={{paddingTop: 10}}>Sicuro di vole eliminare quest'ordine?</p>

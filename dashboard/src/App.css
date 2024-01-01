@@ -150,6 +150,16 @@
   margin-top: 30px;
 }
 
+button.update-bt {
+  width: calc(100% - 40px);
+}
+
+button.reset-bt {
+  width: 40px;
+  font-size: 20px;
+  background-color: #0000;
+}
+
 button.cancel-bt,
 .confirm-deleting .cancel-bt {
   background: white;

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import OrdersList from "./OrdersList"
 import TablesList from "./TablesList"
 import { GetAllOrders } from "./firebase"
+import LoginForm from "./LoginForm"
 
 export const foodsList = data.foodsList
 export const categoriesList = data.categoriesList
@@ -23,31 +24,37 @@ for (let key in categoriesList) {
 }
 
 function App() {
+  const [logged, setLogged] = useState(false)
   const [mode, setMode] = useState(false)
-  const [orderList, setOrderList] = useState({})
 
-  return (
-    <div className="App">
-      <Header mode={mode} setMode={setMode} />
-      <main className='app-main container-fluid'>
-        {!mode ?
-          <OrdersList GetOrdersFunc={func => GetAllOrders(func)} FormatOrders={ol => {
-            let _info = {}, formOrders = {}
-            Object.keys(ol).map((table) => Object.keys(ol[table]).map(id => {
-              if (ol[table][id].completed !== true) {
-                _info[id] = { table: table, time: parseInt(id), completed: ol[table][id].completed || [] }
-                if (ol[table][id].completed)
-                  delete ol[table][id].completed
-                formOrders[id] = ol[table][id]
-              }
-            }))
-            return [formOrders, _info]
-          }} /> :
-          <TablesList />
-        }
-      </main>
-    </div>
-  );
+  if (logged)
+    return (
+      <div className="App">
+        <Header mode={mode} setMode={setMode} />
+        <main className='app-main container-fluid'>
+          {!mode ?
+            <OrdersList GetOrdersFunc={func => GetAllOrders(func)} FormatOrders={ol => {
+              let _info = {}, formOrders = {}
+              Object.keys(ol).map((table) => Object.keys(ol[table]).map(id => {
+                if (ol[table][id].completed !== true) {
+                  _info[id] = { table: table, time: parseInt(id), completed: ol[table][id].completed || [] }
+                  if (ol[table][id].completed)
+                    delete ol[table][id].completed
+                  formOrders[id] = ol[table][id]
+                }
+              }))
+              return [formOrders, _info]
+            }} /> :
+            <TablesList />
+          }
+        </main>
+      </div>
+    );
+  else
+    return (
+      <div className="App">
+        <LoginForm onSigned={setLogged}/>
+      </div>)
 }
 
 const Header = ({ mode, setMode }) => {
