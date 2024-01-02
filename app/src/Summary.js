@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef, forwardRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css'
 import './FoodDetailsPanel.css'
 import './Summary.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faClose, faWarning, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faClose, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { animated, useSpring } from '@react-spring/web'
 import { orderList, foodsList, LoadingIcon } from "./App"
 import { takeOrder } from "./firebase"
@@ -21,11 +21,11 @@ const ShortSummary = ({ price, handleOpenSummary, handleCloseSummary, showSummar
     return (<div>
         <div className='short-summary-panel' ref={summaryRef} role='group' aria-hidden={showSummary} aria-label={'Riepilogo del tuo ordine: ' + Object.keys(orderList).length + " elementi per " + price}>
             <div className='container'>
-            <div className='short-total' aria-label={'Prezzo totale: ' + price}>{price}</div>
-            <button className='short-summary-bt' onClick={handleOpenSummary} aria-label={"Ordina " + Object.keys(orderList).length + " elementi."}>
-                {"Ordina ora "}
-                <FontAwesomeIcon icon={faShoppingCart} />
-            </button>
+                <div className='short-total' aria-label={'Prezzo totale: ' + price}>{price}</div>
+                <button className='short-summary-bt' onClick={handleOpenSummary} aria-label={"Ordina " + Object.keys(orderList).length + " elementi."}>
+                    {"Ordina ora "}
+                    <FontAwesomeIcon icon={faShoppingCart} />
+                </button>
             </div>
         </div>
         {showSummary && <ConfirmDialog price={price} onClose={handleCloseSummary} />}

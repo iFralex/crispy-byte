@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import './App.css';
 import data from "./data.json"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -42,6 +42,7 @@ function App() {
                     delete ol[table][id].completed
                   formOrders[id] = ol[table][id]
                 }
+                return null
               }))
               return [formOrders, _info]
             }} /> :
