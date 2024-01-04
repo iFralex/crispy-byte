@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+## CrispyByte Dashboard: Optimizing Ordering and Service
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Introduction:
 
-## Available Scripts
+The CrispyByte dashboard stands as a fundamental component of the platform, providing an advanced and highly customizable management system for waitstaff and cashiers. Protected by passwords, this dashboard ensures the platform's security against malicious actions, allowing staff to efficiently manage orders and tables.
 
-In the project directory, you can run:
+### Secure Account System:
 
-### `npm start`
+Security is at the core of the CrispyByte dashboard, featuring a password-protected account system. This functionality ensures that only authorized personnel can access the platform, reducing the risk of unauthorized access and maintaining operational integrity.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Dashboard Structure:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The dashboard is divided into two main sections: "Orders" and "Tables."
 
-### `npm test`
+#### 1. Orders Section:
+   - **Order Overview:** Waitstaff have access to a chronological display of all placed orders. Each order is marked with a unique color associated with the corresponding table.
+   - **Order Details:** Each order presents crucial information such as order time, table number, and total cost.
+   - **Dish Management:** Waitstaff can view dishes ordered by each customer. Selecting served dishes and updating through the dedicated button allows quick synchronization across waiter dashboards.
+   - **Reporting Completed Orders:** Once all dishes of an order are delivered, the waiter can mark the order as "Done," removing it from the Orders section.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 2. Tables Section:
+   - **Table Management:** The Tables section is primarily designed for cashiers, allowing them to view all available tables in the restaurant.
+   - **Viewing Completed Orders:** Cashiers can select a specific table and view all associated completed orders. The total price to be paid for all orders is clearly indicated.
+   - **Payment and Removal:** After payment, the cashier can eliminate all orders associated with that table with a single click, streamlining post-payment management.
 
-### `npm run build`
+### Operational Advantages:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The CrispyByte dashboard not only optimizes the ordering process but also provides complete control over the status of orders and tables. Waitstaff and cashiers can collaborate efficiently to ensure flawless service, enhancing the overall customer experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Conclusion:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The CrispyByte dashboard emerges as an essential tool for restaurant operational management, providing an advanced and secure control system. Through order and table management features, CrispyByte positions itself as the ideal partner to ensure smooth and optimized business operations.

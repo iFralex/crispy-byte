@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Nome del file da copiare
 data="data.json"
 read -p "Inserisci un messaggio di commit: " message
 
-# Funzione per le operazioni comuni
-operazioni_comuni() {
+comman_operations() {
     cp "$data" ./app/src/  # Copia in una sottodirectory della directory corrente
     cp "$data" ./dashboard/src/  # Copia in una sottodirectory della directory corrente
     cd ./app
@@ -17,24 +15,28 @@ operazioni_comuni() {
     firebase deploy --only hosting
 }
 
-# Controlla gli argomenti e esegui le operazioni appropriate
 if [[ "$1" == "--app" ]]; then
+    # Only app
     cp "$data" ./app/src/
     cd ./app
     npm run build
     cd ..
     firebase deploy --only hosting:app
 elif [[ "$1" == "--dashboard" ]]; then
+    # Only dashboard
     cp "$data" ./dashboard/src/
     cd ./dashboard
     npm run build
     cd ..
     firebase deploy --only hosting:dashboard
 else
-    operazioni_comuni
+    # both
+    comman_operations
 fi
 
-# Comandi git
+# Upload on github
 git add .
 git commit -m "$message"
 git push
+
+echo "Deploy completed succesfully!"
